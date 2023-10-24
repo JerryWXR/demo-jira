@@ -1,11 +1,13 @@
 import React from 'react';
 import './App.css';
-import { LoginScreen } from "./screen/login";
+import {AuthenticatedApp} from "./authenticated-app";
+import {UnauthenticatedApp} from "./unauthenticated-app";
+import {ProjectListScreen} from "./screen/project-list";
 
 function App() {
   return (
       <div className="App">
-        <LoginScreen></LoginScreen>
+          <ProjectListScreen/>
       </div>
   );
 }

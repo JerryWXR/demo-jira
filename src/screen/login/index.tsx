@@ -18,8 +18,8 @@ export const LoginScreen = () => {
   // HTMLFormElement extends Element
   const handleSubmit = (event:FormEvent<HTMLFormElement>)=> {
     event.preventDefault()
-    const username:string =(event.currentTarget.elements[0] as HTMLInputElement).value
-    const password:string=(event.currentTarget.elements[1] as HTMLInputElement).value
+    const username:string = (event.currentTarget.elements[0] as HTMLInputElement).value
+    const password:string = (event.currentTarget.elements[1] as HTMLInputElement).value
     login({username,password})
   }
   return <form onSubmit={handleSubmit}>
@@ -32,7 +32,5 @@ export const LoginScreen = () => {
       <input type="password" id={'password'} />
     </div>
     <button type={'submit'}>登陆</button>
-  </form>
-
-  ;
+  </form>;
 };
