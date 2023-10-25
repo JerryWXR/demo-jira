@@ -22,7 +22,7 @@ const AuthContext = React.createContext<{
     user: User|null,
     login:(form:AuthForm)=> Promise<void>,
     register:(form:AuthForm)=> Promise<void>
-    logout:(form:AuthForm)=> Promise<void>
+    logout:()=> Promise<void>
 }|undefined>(undefined)
 AuthContext.displayName='AuthContext'
 export const AuthProvider = ({children}:{children:ReactNode}) => {
