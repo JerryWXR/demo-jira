@@ -1,4 +1,4 @@
-import{useEffect, useState} from 'react';
+import {useEffect, useRef, useState} from 'react';
 
 export const isFalsy = (value:unknown) => value === 0 ? false : !!value
 export const cleanObject = (object: {[key: string]: unknown}) => {
@@ -26,7 +26,8 @@ export const useDebounce = (value:unknown,delay?:number):any => {
     return debouncedValue
 }
 export const useDocumentTitle = (title:string,keepOnmount:boolean=true) => {
-    const oldTitle = document.title
+    const oldTitle = useRef(document.title).current
+    // const oldTitle = document.title
     useEffect(() => {
         document.title=title
     },[title])
