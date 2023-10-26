@@ -4,7 +4,7 @@ import { Form, Input} from 'antd'
 import {LongButton} from "./index";
 import {useAsync} from "../utils/use-async";
 
-export const LoginScreen = ({onError} : {onError:(error: Error) => void}) => {
+export const LoginScreen = ({onError} : {onError:(error: Error | null) => void}) => {
     const {login} = useAuth()
     const {run,isLoading} = useAsync(undefined,{throwOnError: true})
     // HTMLFormElement extends Element

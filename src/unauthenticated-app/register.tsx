@@ -4,7 +4,7 @@ import { Form, Input} from "antd";
 import {LongButton} from "./index";
 import {useAsync} from "../utils/use-async";
 
-export const RegisterScreen = ({onError}: {onError:(error:Error)=>void}) => {
+export const RegisterScreen = ({onError}: {onError:(error:Error | null)=>void}) => {
     const {register} = useAuth()
     const {run,isLoading} = useAsync(undefined,{throwOnError: true})
 
