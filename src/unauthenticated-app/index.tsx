@@ -5,14 +5,11 @@ import {Button, Card, Divider, Typography} from "antd";
 import styled from "@emotion/styled";
 import logo from "../assets/logo.png"
 import bg from "../assets/bg.webp"
-import {Helmet} from "react-helmet"
-import {useDocumentTitle} from "../utils";
 
 
 export const UnauthenticatedApp = () => {
     const [isRegister,setIsRegister] = useState(false)
     const [error, setError] = useState<Error | null>(null)
-    // useDocumentTitle('登录注册',true)
     return (
         <Container>
             <Header/>
