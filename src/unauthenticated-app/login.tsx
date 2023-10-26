@@ -12,8 +12,7 @@ export const LoginScreen = ({onError} : {onError:(error: Error | null) => void})
         try {
             await run(login(values))
         } catch(e) {
-            // @ts-ignore
-            onError(e)
+            if(e instanceof Error) onError(e)
         }
     }
     return <Form onFinish={handleSubmit}>

@@ -26,6 +26,5 @@ export const FullPageLoading = () => <FullPage>
     <Spin size={"large"}/>
 </FullPage>
 export const FullPageErrorFallback = ({error}:{error:Error | null}) => <FullPage>
-    <DevTool/>
     <Typography.Text type={"danger"}>{error?.message}</Typography.Text>
 </FullPage>

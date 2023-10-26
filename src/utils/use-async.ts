@@ -41,7 +41,7 @@ export const useAsync = <D>(
             error: null,
         });
 
-    const setError = (error: Error) =>
+    const setError = (error: Error|null) =>
         setState({
             data: null,
             stat: "error",

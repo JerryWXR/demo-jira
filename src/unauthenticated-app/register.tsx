@@ -17,8 +17,7 @@ export const RegisterScreen = ({onError}: {onError:(error:Error | null)=>void}) 
         try {
            await run(register(values))
         }catch (e) {
-            // @ts-ignore
-            onError(e)
+            if(e instanceof Error) onError(e)
         }
     }
     return <Form onFinish={handleSubmit}>
