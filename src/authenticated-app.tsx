@@ -7,6 +7,7 @@ import {Button, Dropdown, Menu} from "antd";
 import {Navigate, Route, Routes} from "react-router";
 import {BrowserRouter as Router} from "react-router-dom";
 import {ProjectScreen} from "./screen/project";
+import {resetRoute} from "./utils";
 
 export const AuthenticatedApp = () => {
 
@@ -30,7 +31,9 @@ const PageHeader= () => {
         <HeaderLeft gap={true}>
             {/*<img src={logo}></img>*/}
             {/*<Logo width={'18rem'} color={'rgb(38,132,255'}/>*/}
-            <h2>Logo</h2>
+            <ButtonTop  onClick={()=>{resetRoute()}}>
+                <h2>Logo</h2>
+            </ButtonTop>
             <h2>项目</h2>
             <h2>用户</h2>
         </HeaderLeft>
@@ -62,3 +65,5 @@ const HeaderLeft = styled(Row)`
 `
 const HeaderRight = styled.div``
 const Main = styled.main``
+const ButtonTop=styled.button`
+    text-align:center;`
