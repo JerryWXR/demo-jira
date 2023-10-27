@@ -41,3 +41,15 @@ export const useDocumentTitle = (title:string,keepOnmount:boolean=true) => {
     },[keepOnmount,oldTitle])
 }
 export const resetRoute = () => window.location.href=window.location.origin
+
+export const useMountedRef = () => {
+    const mountedRef = useRef(false)
+
+    useEffect(() => {
+        mountedRef.current=true
+        return () => {
+            mountedRef.current=false
+        }
+    })
+    return mountedRef
+}
