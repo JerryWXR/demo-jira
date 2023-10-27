@@ -7,11 +7,11 @@ import {Typography} from "antd";
 import {useProjects} from "../../utils/project";
 import {useUsers} from "../../utils/user";
 import useUrlQueryParams from "../../utils/url";
+import {useProjectSearchParams} from "./utils";
 
 export const ProjectListScreen = () => {
-    const [param,setParam] = useUrlQueryParams(['name','personId'])
-    const debouncedParam = useDebounce(param,1000)
-    const {isLoading,error,data:list} = useProjects(debouncedParam)
+    const [param,setParam]=useProjectSearchParams()
+    const {isLoading,error,data:list} = useProjects(useDebounce(param,200))
     const {data : users} = useUsers()
     return <Container>
         <SearchPanel users={users || []} param={param} setParam={setParam}></SearchPanel>
