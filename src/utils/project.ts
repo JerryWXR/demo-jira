@@ -5,6 +5,7 @@ import {Project} from "../screen/project-list/list"
 import {useHttp} from "./http";
 
 export const useProjects = (param?:Partial<Project>) => {
+    console.log(param)
     const client = useHttp()
     const {run,...result} = useAsync<Project[]>()
     useEffect(() => {
